@@ -42,6 +42,8 @@ const Photo = () => {
           >
             Say goodbye to crypto theft and weak security – Wall-ID ensures every transaction is verified.
           </h1>
+          <br />
+          <br />
           {/* <p className="mb-8 leading-relaxed">
             Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.
           </p> */}
