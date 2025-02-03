@@ -7,6 +7,7 @@ const Photo = () => {
 
   gsap.registerPlugin(ScrollTrigger);
   const textRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     gsap.fromTo(
@@ -26,6 +27,16 @@ const Photo = () => {
     );
   }, []);
 
+  useEffect(() => {
+    // GSAP floating animation for the button
+    gsap.to(buttonRef.current, {
+      y: 20,  // Moves the button 20px up and down
+      duration: 2,  // Time for one cycle (2 seconds)
+      repeat: -1,  // Infinite loop
+      yoyo: true,  // Moves back and forth (like floating)
+      ease: "power1.inOut",  // Smooth animation
+    });
+  }, []);
 
   return (
     <section className="text-white body-font ubuntu-bold ">
@@ -44,15 +55,16 @@ const Photo = () => {
           </h1>
           <br />
           <br />
-          {/* <p className="mb-8 leading-relaxed">
-            Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.
-          </p> */}
           <div className="flex justify-center">
-            <button className="bg-blue-500 text-white py-2 px-4 rounded-lg transition-all hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:py-4 hover:px-6">
-              Get Started
+            <button
+              ref={buttonRef}
+              className="py-2 px-4 rounded-lg text-white bg-blue-500 transition-all hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:py-4 hover:px-6
+                relative border-4 border-transparent bg-gradient-to-r from-blue-500 to-blue-700
+                hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-500 
+                before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-500 before:to-blue-700 before:border-2 before:rounded-lg before:content-['']"
+            >
+              <span className="relative z-10">Get Started</span> {/* Ensure text stays above the pseudo-element */}
             </button>
-
-
           </div>
         </div>
       </div>
