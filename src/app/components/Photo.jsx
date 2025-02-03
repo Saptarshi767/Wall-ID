@@ -38,7 +38,7 @@ const Photo = () => {
         <div className="text-center lg:w-2/3 w-full">
         <h1
         ref={textRef}
-        className="title-font font-extrabold sm:text-4xl mb-4 font-medium text-7xl text-blue-500 text-center"
+        className="title-font font-extrabold sm:text-4xl mb-4 text-7xl text-blue-500 text-center"
       >
         Say goodbye to crypto theft and weak security – Wall-ID ensures every transaction is verified.
       </h1>
