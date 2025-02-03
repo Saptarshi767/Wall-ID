@@ -42,9 +42,9 @@ const Photo = () => {
           >
             Say goodbye to crypto theft and weak security – Wall-ID ensures every transaction is verified.
           </h1>
-          <p className="mb-8 leading-relaxed">
+          {/* <p className="mb-8 leading-relaxed">
             Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.
-          </p>
+          </p> */}
           <div className="flex justify-center">
             <button className="bg-blue-500 text-white py-2 px-4 rounded-lg transition-all hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:py-4 hover:px-6">
               Get Started
