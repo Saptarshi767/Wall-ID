@@ -1,7 +1,9 @@
 'use client'
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import Link from 'next/link';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 
 const Photo = () => {
 
@@ -12,7 +14,7 @@ const Photo = () => {
   useEffect(() => {
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, scale: 0.8 }, 
+      { opacity: 0, scale: 0.8 },
       {
         opacity: 1,
         scale: 1,
@@ -20,8 +22,8 @@ const Photo = () => {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: textRef.current,
-          start: 'top 80%', 
-          toggleActions: 'play none none reverse', 
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
         },
       }
     );
@@ -29,11 +31,11 @@ const Photo = () => {
 
   useEffect(() => {
     gsap.to(buttonRef.current, {
-      y: 20,  
-      duration: 2,  
-      repeat: -1,  
-      yoyo: true,  
-      ease: "power1.inOut",  
+      y: 20,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
     });
   }, []);
 
@@ -62,7 +64,13 @@ const Photo = () => {
                 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-500 
                 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-500 before:to-blue-700 before:border-2 before:rounded-lg before:content-['']"
             >
-              <span className="relative z-10">Get Started</span> 
+              <span className="relative z-10">
+                <Link href="/dashboard" className="text-white hover:no-underline">
+                  Get Started
+                </Link>
+              </span>
+
+
             </button>
           </div>
         </div>
