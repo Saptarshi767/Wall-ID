@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Header from './components/Header'
 const page = () => {
   return (
     <div>
-      dz
+      <Header/>
     </div>
   )
 }
