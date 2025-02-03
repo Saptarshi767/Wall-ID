@@ -15,8 +15,8 @@ const Dashboard = () => {
   const [walletId, setWalletId] = useState("0xABC123...");
   const [balance, setBalance] = useState("Loading...");
   const [transactions, setTransactions] = useState([]);
-  const [inputWalletId, setInputWalletId] = useState(""); // State to hold the input wallet address
-  const [loading, setLoading] = useState(true); // Loading state
+  const [inputWalletId, setInputWalletId] = useState(""); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     if (walletId !== "0xABC123...") {
@@ -86,7 +86,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="p-6 space-y-6 max-w-3xl mx-auto">
+    <>
+    <h1 className="text-7xl text-white">HACKER'S CRY, WE FRY</h1>
+
+    <div className="p-6 bg-[#4285f4] space-y-6 max-w-3xl mx-auto">
       {/* Wallet Search Section */}
       <div className="flex items-center gap-4 mb-6">
         <input
@@ -211,6 +214,7 @@ const Dashboard = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 

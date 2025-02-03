@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Install from './components/Install';
 import Content from './components/Content';
 import Photo from './components/Photo';
+import Footer from './components/Footer';
 
 const Page = () => {
   return (
@@ -13,6 +14,8 @@ const Page = () => {
       <Content />
       <Photo />
       <Install />
+      <Footer/>
+
       {/* <Grid />
       <FAQ /> */}
     </div>
