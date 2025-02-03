@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react"; // Import icons for mobile menu
-import LinkComponent from './Link';  // Correct default import
+import { Menu, X } from "lucide-react"; 
+import LinkComponent from './Link';  
 
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
   const [showLinkPage, setShowLinkPage] = useState(false);
 
   const handleWallIdClick = () => {
-    setShowLinkPage(true); // Show the Link component when wall-Id is clicked
+    setShowLinkPage(true); 
   };
 
   return (
@@ -18,7 +18,7 @@ const Header = () => {
       <nav className="bg-[#4285f4]">
         {/* Desktop Navbar */}
         <div className="navbar ubuntu-bold text-neutral-content bg-[#4285f4] px-4 sm:px-8 py-3 flex justify-between items-center">
-          {/* Logo */}
+
           <button className="btn btn-ghost text-xl text-white">
             <img className="w-34 h-14" src="/logonav.svg" alt="Logo" />
           </button>
@@ -56,7 +56,6 @@ const Header = () => {
         )}
       </nav>
 
-      {/* Conditionally render the LinkComponent when wall-Id is clicked */}
       {showLinkPage && <LinkComponent />}
     </>
   );

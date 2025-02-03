@@ -19,8 +19,8 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0"> {/* Ensure it renders properly */}
+
+      <div className="absolute inset-0 z-0"> 
         <video
           className="w-full h-full object-cover"
           autoPlay
@@ -33,11 +33,9 @@ const Hero = () => {
         </video>
       </div>
 
-      {/* Hero Content */}
       <div className="relative z-10 text-center flex flex-col justify-center items-center text-white">
         <img src="belownav.svg" alt="" className="absolute top-[-20px]" />
 
-        {/* Floating Image */}
         <img
           ref={imageRef}
           className="w-96"
@@ -46,7 +44,6 @@ const Hero = () => {
           style={{ position: "relative", top: "80px" }}
         />
 
-        {/* Typewriter Effect */}
         <div className="mt-10 w-full pl-0 text-white text-left">
           <div className='w-1/3'>
           
@@ -56,7 +53,6 @@ const Hero = () => {
         </div>
 
 
-        {/* Additional Text */}
         <div className="mt-4 px-6 text-white text-center w-full sm:w-2/3">
           <Textsap />
         </div>

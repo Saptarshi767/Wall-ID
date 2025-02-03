@@ -12,7 +12,7 @@ const Photo = () => {
   useEffect(() => {
     gsap.fromTo(
       textRef.current,
-      { opacity: 0, scale: 0.8 }, // Start invisible and slightly smaller
+      { opacity: 0, scale: 0.8 }, 
       {
         opacity: 1,
         scale: 1,
@@ -20,21 +20,20 @@ const Photo = () => {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: textRef.current,
-          start: 'top 80%', // Adjust visibility trigger
-          toggleActions: 'play none none reverse', // Play when scrolled in, reverse when scrolled out
+          start: 'top 80%', 
+          toggleActions: 'play none none reverse', 
         },
       }
     );
   }, []);
 
   useEffect(() => {
-    // GSAP floating animation for the button
     gsap.to(buttonRef.current, {
-      y: 20,  // Moves the button 20px up and down
-      duration: 2,  // Time for one cycle (2 seconds)
-      repeat: -1,  // Infinite loop
-      yoyo: true,  // Moves back and forth (like floating)
-      ease: "power1.inOut",  // Smooth animation
+      y: 20,  
+      duration: 2,  
+      repeat: -1,  
+      yoyo: true,  
+      ease: "power1.inOut",  
     });
   }, []);
 
@@ -63,7 +62,7 @@ const Photo = () => {
                 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-500 
                 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-500 before:to-blue-700 before:border-2 before:rounded-lg before:content-['']"
             >
-              <span className="relative z-10">Get Started</span> {/* Ensure text stays above the pseudo-element */}
+              <span className="relative z-10">Get Started</span> 
             </button>
           </div>
         </div>

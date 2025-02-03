@@ -7,19 +7,18 @@ const ScrollText = () => {
   gsap.registerPlugin(ScrollTrigger);
   const textRefs = useRef([]);
 
-  // ✅ Define text array
   const texts = ["🚀 Biometric Security", "🔐NFC Authentication", "📜Smart Contract"];
 
   useEffect(() => {
     textRefs.current.forEach((el, index) => {
-      let xValue = "20%"; // Default for First Text
+      let xValue = "20%"; 
 
-      if (index === 1) xValue = "50%"; // Second Text goes further right
-      if (index === 2) xValue = "120%"; // Third Text reaches the rightmost
+      if (index === 1) xValue = "50%"; 
+      if (index === 2) xValue = "120%"; 
 
       gsap.fromTo(
         el,
-        { x: "-100%", opacity: 0 }, // Start from left
+        { x: "-100%", opacity: 0 }, 
         {
           x: xValue,
           opacity: 1,
