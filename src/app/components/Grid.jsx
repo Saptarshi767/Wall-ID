@@ -1,17 +1,16 @@
 import React from 'react';
-import '/src/app/grid.css';  
 
 const FeatureCard = ({ image, title, description }) => {
   return (
-    <div className="grid-item">
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+    <div className="bg-gray-800 p-6 rounded-lg text-center shadow-lg flex flex-col items-center">
+      <img src={image} alt={title} className="w-16 h-16 mb-4" />
+      <h3 className="text-xl font-semibold text-orange-500 mb-2">{title}</h3>
+      <p className="text-gray-300 text-sm">{description}</p>
     </div>
   );
 };
 
-const App = () => {
+const Grid = () => {
   const features = [
     {
       title: 'Speak & Ask',
@@ -46,8 +45,8 @@ const App = () => {
   ];
 
   return (
-    <div className="body">
-      <div className="grid-container">
+    <div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
