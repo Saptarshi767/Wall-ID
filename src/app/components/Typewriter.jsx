@@ -36,7 +36,7 @@ const Typewriter = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <h1 className="text-7xl font-bold text-white">
+    <h1 className="text-7xl font-bold ubuntu-bold text-white">
       {text}
       <span className="animate-blink">|</span> {/* Blinking Cursor */}
     </h1>
