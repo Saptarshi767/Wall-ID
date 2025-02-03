@@ -15,7 +15,7 @@ const ScrollText = () => {
       let xValue = "20%"; // Default for First Text
 
       if (index === 1) xValue = "50%"; // Second Text goes further right
-      if (index === 2) xValue = "200%"; // Third Text reaches the rightmost
+      if (index === 2) xValue = "120%"; // Third Text reaches the rightmost
 
       gsap.fromTo(
         el,
