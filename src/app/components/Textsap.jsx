@@ -30,13 +30,13 @@ const ScrollingText = () => {
   return (
     <div className="h-[30vh] flex flex-col justify-center items-center">
       {/* Text Strip */}
-      <div className="h-[80px] w-full overflow-hidden flex flex-col items-center gap-4">
-        {["Welcome to HckerdsVsdf", "loremloremlreorme", "asascaefwrefwscsadc"].map(
+      <div className="h-[100px] w-full overflow-hidden flex flex-col items-center gap-4">
+        {[" Tap, Pay, Secure – ", "Your Digital Identity Reinvented"].map(
           (text, index) => (
             <h1
               key={index}
               ref={(el) => (textRefs.current[index] = el)}
-              className="text-white text-2xl font-bold whitespace-nowrap"
+              className="text-white text-4xl font-bold whitespace-nowrap"
             >
               {text}
             </h1>

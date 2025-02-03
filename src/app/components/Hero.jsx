@@ -43,13 +43,13 @@ const Hero = () => {
           className="w-96"
           src="pi.png"
           alt=""
-          style={{ position: "relative", top: "130px" }}
+          style={{ position: "relative", top: "80px" }}
         />
 
         {/* Typewriter Effect */}
         <div className="mt-10 w-full pl-0 text-white text-left">
           <div className='w-1/3'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel corporis, provident ab enim facilis necessitatibus repudiandae delectus velit dolore facere eveniet id magni eligendi aperiam. Reiciendis vitae suscipit magni atque!
+          
           </div>
           
           <Typewriter />

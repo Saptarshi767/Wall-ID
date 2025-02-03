@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
 
-const texts = ["Welcome to my website!", "Explore awesome features.", "Join us today!"];
+const texts = ["Hackers Cry, You Just Tap & Buy!", "Explore awesome features.", "Join us today!"];
 
 const Typewriter = () => {
   const [text, setText] = useState(""); // Stores the current text
@@ -36,7 +36,7 @@ const Typewriter = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <h1 className="text-3xl font-bold text-white">
+    <h1 className="text-7xl font-bold text-white">
       {text}
       <span className="animate-blink">|</span> {/* Blinking Cursor */}
     </h1>
