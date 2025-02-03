@@ -46,9 +46,8 @@ const Photo = () => {
             Meggings kinfolk echo park stumptown DIY, kale chips beard jianbing tousled. Chambray dreamcatcher trust fund, kitsch vice godard disrupt ramps hexagon mustache umami snackwave tilde chillwave ugh. Pour-over meditation PBR&B pickled ennui celiac mlkshk freegan photo booth af fingerstache pitchfork.
           </p>
           <div className="flex justify-center">
-            <button className="inline-flex text-black bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">
-              Get Started
-            </button>
+          <button className="btn btn-active btn-secondary">Secondary</button>
+
           </div>
         </div>
       </div>
