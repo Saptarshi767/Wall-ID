@@ -11,7 +11,7 @@ const ScrollText = () => {
 
   useEffect(() => {
     if (window.innerWidth < 768) return; // Skip GSAP for mobile devices
-
+    
     textRefs.current.forEach((el, index) => {
       let xValue = "20%";
       if (index === 1) xValue = "50%";

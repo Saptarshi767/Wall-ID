@@ -50,16 +50,15 @@ const Photo = () => {
         <div className="text-center lg:w-2/3 w-full">
           <h1
             ref={textRef}
-            className="title-font font-extrabold sm:text-4xl mb-4 text-7xl text-blue-500 text-center"
+            className="title-font font-extrabold text-5xl sm:text-4xl md:text-7xl mb-4 text-blue-500 text-center"
           >
             Say goodbye to crypto theft and weak security – Wall-ID ensures every transaction is verified.
           </h1>
-          <br />
-          <br />
+
           <div className="flex justify-center">
             <button
               ref={buttonRef}
-              className="py-2 px-4 rounded-lg text-white bg-blue-500 transition-all hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:py-4 hover:px-6
+              className="py-4 m-6 px-4 rounded-lg text-white bg-blue-500 transition-all hover:bg-blue-600 hover:scale-110 hover:shadow-lg hover:py-4 hover:px-6
                 relative border-4 border-transparent bg-gradient-to-r from-blue-500 to-blue-700
                 hover:bg-gradient-to-l hover:from-blue-700 hover:to-blue-500 
                 before:absolute before:inset-0 before:bg-gradient-to-r before:from-blue-500 before:to-blue-700 before:border-2 before:rounded-lg before:content-['']"
