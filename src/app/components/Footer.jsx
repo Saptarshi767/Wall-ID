@@ -9,7 +9,7 @@ const Footer = () => {
             <img className='w-28' src="logo2.svg" alt="logo" />
             <span className="ml-3 text-xl">Wall-Id</span>
           </a>
-          <p className="text-sm text-black sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2025 Wall-Id —
+          <p className="text-sm text-black sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-black sm:py-2 sm:mt-0 mt-4">© 2025 Wall-Id —
             <a href="#" className="text-black ml-1" rel="noopener noreferrer" target="_blank">@Siddhant</a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
