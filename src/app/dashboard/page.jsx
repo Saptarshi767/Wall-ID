@@ -88,14 +88,7 @@ const Dashboard = () => {
       
       {/* Wallet Search Section */}
       <div className="flex items-center gap-4 mb-6">
-        <input
-          type="text"
-          value={inputWalletId}
-          onChange={(e) => setInputWalletId(e.target.value)}
-          className="border bg-white p-2 rounded-md w-1/2"
-          placeholder="Enter Wallet Address"
-        />
-        <Button onClick={handleSubmit} className="bg-blue-500 text-white">Search</Button>
+        
       </div>
 
       {/* My Wallet */}
