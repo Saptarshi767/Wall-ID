@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react"; 
 import LinkComponent from './Link';  
-
+import Link from 'next/link';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +31,24 @@ const Header = () => {
             >
               Wall-ID W1
             </span>
-            <span className="cursor-pointer hover:text-gray-300">Research</span>
-            <span className="cursor-pointer hover:text-gray-300">Support</span>
-            <span className="cursor-pointer hover:text-gray-300">Newsroom</span>
+            <span className="cursor-pointer hover:text-gray-300">
+              <Link  href="/dashboard" className="text-white hover:no-underline">
+              Research
+              </Link>
+              </span>
+              <span className="cursor-pointer hover:text-gray-300">
+            <Link  href="/newsroom" className="text-white hover:no-underline">
+            Newsroom
+              </Link>
+              </span>
+
+              
+
+            <span className="cursor-pointer hover:text-gray-300">
+            <button className="btn btn-active btn-ghost">SignUp</button>
+            </span>
+
+            
           </div>
 
           {/* Mobile Menu Button */}
@@ -49,9 +64,19 @@ const Header = () => {
         {isOpen && (
           <div className="sm:hidden flex flex-col items-center bg-[#4285f4] py-4 space-y-2">
             <span className="py-2 cursor-pointer hover:text-gray-300">Wall-ID W1</span>
-            <span className="py-2 cursor-pointer hover:text-gray-300">Research</span>
-            <span className="py-2 cursor-pointer hover:text-gray-300">Support</span>
-            <span className="py-2 cursor-pointer hover:text-gray-300">Newsroom</span>
+            <span className="py-2 cursor-pointer hover:text-gray-300">
+            <Link  href="/dashboard" className="text-white hover:no-underline">
+              Research
+              </Link>
+            </span>
+            <span className="py-2 cursor-pointer hover:text-gray-300">
+            <Link  href="/newsroom" className="text-white hover:no-underline">
+            Newsroom
+              </Link>
+            </span>
+            <span className="py-2 cursor-pointer hover:text-gray-300">
+            <button className="btn btn-active btn-ghost">SignUp</button>
+            </span>
           </div>
         )}
       </nav>

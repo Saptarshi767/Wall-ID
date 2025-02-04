@@ -36,6 +36,19 @@ const Hero = () => {
       <div className="relative z-10 text-center flex flex-col justify-center items-center text-white">
         <img src="belownav.svg" alt="" className="absolute top-[-20px]" />
 
+        {/* <video
+          ref={imageRef}
+          className="w-96"
+          style={{ position: "relative", top: "80px" }}
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="front.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+         */}
         <img
           ref={imageRef}
           className="w-96"

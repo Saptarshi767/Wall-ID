@@ -12,8 +12,8 @@ const Page = () => {
       <Header /> {/* Header will handle the conditional rendering of LinkComponent */}
       <Hero />
       <Content />
-      <Photo />
       <Install />
+      <Photo />
       <Footer/>
 
       {/* <Grid />
