@@ -38,16 +38,23 @@ const ScrollText = () => {
   }, []);
 
   return (
-    <div className="h-[100vh] flex flex-col items-start justify-center bg-[#4285f4] space-y-10 px-10 overflow-hidden">
+    <div className="h-[100vh] flex flex-col items-start justify-center bg-[#4285f4] border space-y-10 px-10 overflow-hidden">
       {texts.map((text, index) => (
         <h1
           key={index}
           ref={(el) => (textRefs.current[index] = el)}
-          className="text-white text-7xl font-bold"
+          className="text-white text-7xl font-bold" 
         >
           {text}
         </h1>
       ))}
+       <img
+          className="w-[408px] h-[458px]"
+          // className='w-96'
+          src="front.gif"
+          alt=""
+          style={{ position: "relative", bottom: "80px" }}
+        />
     </div>
   );
 };
