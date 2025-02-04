@@ -91,7 +91,7 @@ const Header = () => {
       </DialogDescription>
       <DialogFooter>
         {isSignedUp ? (
-          <Link href="/dashboard"> {/* Link to the login page */}
+          <Link href="/login"> {/* Link to the login page */}
             <a className="btn btn-active btn-ghost">Log In</a>
           </Link>
         ) : (
@@ -107,7 +107,7 @@ const Header = () => {
       {/* Conditionally render "Already have an account?" text */}
       {!isSignedUp && (
         <div className="text-blue-500">
-          <Link href="/dashboard" className="hover:no-underline">
+          <Link href="/login" className="hover:no-underline">
              <button>Already have an account? Login!</button> 
           </Link>
         </div>
@@ -164,7 +164,7 @@ const Header = () => {
                 </DialogDescription>
                 <DialogFooter>
                   {isSignedUp ? (
-                    <Link href="/dashboard"> {/* Link to the login page */}
+                    <Link href="/login"> {/* Link to the login page */}
                       <a className="btn btn-active btn-ghost">Log In</a>
                     </Link>
                   ) : (
@@ -180,7 +180,7 @@ const Header = () => {
                 {/* Conditionally render "Already have an account?" text */}
                 {!isSignedUp && (
                   <div className="text-blue-500">
-                    <Link href="/dashboard" className="hover:no-underline">
+                    <Link href="/login" className="hover:no-underline">
                        <button>Already have an account? Login!</button> 
                     </Link>
                   </div>
