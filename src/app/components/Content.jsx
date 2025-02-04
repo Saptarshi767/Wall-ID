@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,18 +7,19 @@ const ScrollText = () => {
   gsap.registerPlugin(ScrollTrigger);
   const textRefs = useRef([]);
 
-  const texts = ["🚀 Biometric Security", "🔐NFC Authentication", "📜Smart Contract"];
+  const texts = ["🚀 Biometric Security", "🔐 NFC Authentication", "📜 Smart Contract"];
 
   useEffect(() => {
-    textRefs.current.forEach((el, index) => {
-      let xValue = "20%"; 
+    if (window.innerWidth < 768) return; // Skip GSAP for mobile devices
 
-      if (index === 1) xValue = "50%"; 
-      if (index === 2) xValue = "120%"; 
+    textRefs.current.forEach((el, index) => {
+      let xValue = "20%";
+      if (index === 1) xValue = "50%";
+      if (index === 2) xValue = "120%";
 
       gsap.fromTo(
         el,
-        { x: "-100%", opacity: 0 }, 
+        { x: "-100%", opacity: 0 },
         {
           x: xValue,
           opacity: 1,
