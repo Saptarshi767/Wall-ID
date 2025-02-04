@@ -13,7 +13,7 @@ const API_KEY = "IRI57XAY533YXUSDTU9J9TU6ZY9B4IWSRS"; // Replace with Sepolia Et
 const TESTNET_BASE_URL = "https://api-sepolia.etherscan.io/api";
 
 const Dashboard = () => {
-  const [walletId, setWalletId] = useState("0x1665a01616299e6b7e993f8eAE4cd75AD6E184ae");
+  const [walletId, setWalletId] = useState("Fetch Your Wallet Now");
   const [balance, setBalance] = useState("Loading...");
   const [transactions, setTransactions] = useState([]);
   const [inputWalletId, setInputWalletId] = useState(""); 
