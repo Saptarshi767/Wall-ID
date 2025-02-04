@@ -9,30 +9,31 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_KEY = "IRI57XAY533YXUSDTU9J9TU6ZY9B4IWSRS";
+const API_KEY = "IRI57XAY533YXUSDTU9J9TU6ZY9B4IWSRS"; // Replace with Sepolia Etherscan API Key
+const TESTNET_BASE_URL = "https://api-sepolia.etherscan.io/api";
 
 const Dashboard = () => {
-  const [walletId, setWalletId] = useState("0xABC123...");
+  const [walletId, setWalletId] = useState("0x1665a01616299e6b7e993f8eAE4cd75AD6E184ae");
   const [balance, setBalance] = useState("Loading...");
   const [transactions, setTransactions] = useState([]);
   const [inputWalletId, setInputWalletId] = useState(""); 
   const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    if (walletId !== "0xABC123...") {
+    if (walletId) {
       fetchBalance();
       fetchTransactions();
     }
-  }, [walletId]); // Run when walletId changes
+  }, [walletId]); 
 
   const fetchBalance = async () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.etherscan.io/api?module=account&action=balance&address=${walletId}&tag=latest&apikey=${API_KEY}`
+        `${TESTNET_BASE_URL}?module=account&action=balance&address=${walletId}&tag=latest&apikey=${API_KEY}`
       );
       if (response.data.status === "1") {
-        setBalance((response.data.result / 1e18).toFixed(4)); // Convert Wei to Ether
+        setBalance((response.data.result / 1e18).toFixed(4)); 
       } else {
         toast.error("Failed to fetch balance");
       }
@@ -46,10 +47,10 @@ const Dashboard = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://api.etherscan.io/api?module=account&action=txlist&address=${walletId}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
+        `${TESTNET_BASE_URL}?module=account&action=txlist&address=${walletId}&startblock=0&endblock=99999999&sort=desc&apikey=${API_KEY}`
       );
       if (response.data.status === "1") {
-        setTransactions(response.data.result.slice(0, 5)); // Show last 5 transactions
+        setTransactions(response.data.result.slice(0, 5)); 
       } else {
         toast.error("No transactions found");
       }
@@ -59,37 +60,32 @@ const Dashboard = () => {
     setLoading(false);
   };
 
-  // Calculate the total sent amount
   const calculateSentAmount = () => {
     return transactions
       .filter((tx) => tx.from.toLowerCase() === walletId.toLowerCase())
       .reduce((total, tx) => total + parseFloat(tx.value) / 1e18, 0)
-      .toFixed(4); // Convert Wei to Ether and sum up
+      .toFixed(4); 
   };
 
-  // Calculate the total received amount
   const calculateReceivedAmount = () => {
     return transactions
       .filter((tx) => tx.to.toLowerCase() === walletId.toLowerCase())
       .reduce((total, tx) => total + parseFloat(tx.value) / 1e18, 0)
-      .toFixed(4); // Convert Wei to Ether and sum up
+      .toFixed(4);
   };
 
-  // Handle the submit button to update wallet address
   const handleSubmit = () => {
     if (inputWalletId.trim() !== "") {
       setWalletId(inputWalletId);
-      setInputWalletId(""); // Clear input field after submission
+      setInputWalletId("");
     } else {
       toast.error("Please enter a valid wallet address");
     }
   };
 
   return (
-    <>
-    <h1 className="text-7xl text-white">HACKER'S CRY, WE FRY</h1>
-
-    <div className="p-6 bg-[#4285f4] space-y-6 max-w-3xl mx-auto">
+    <div className="p-6 bg-blue-600 space-y-6 max-w-3xl mx-auto">
+      
       {/* Wallet Search Section */}
       <div className="flex items-center gap-4 mb-6">
         <input
@@ -214,7 +210,6 @@ const Dashboard = () => {
         </CardContent>
       </Card>
     </div>
-    </>
   );
 };
 
