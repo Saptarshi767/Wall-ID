@@ -4,6 +4,21 @@ import React, { useState } from "react";
 import { Menu, X } from "lucide-react"; 
 import LinkComponent from './Link';  
 import Link from 'next/link';
+import { Button } from "@/components/ui/button"
+import { ToastContainer, toast } from 'react-toastify'; // Ensure toast is imported
+import 'react-toastify/dist/ReactToastify.css';
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 
 const Header = () => {
@@ -12,6 +27,13 @@ const Header = () => {
 
   const handleWallIdClick = () => {
     setShowLinkPage(true); 
+  };
+
+  const [isSignedUp, setIsSignedUp] = useState(false);
+
+  const handleClick = () => {
+    setIsSignedUp(true);
+    toast.success('Fingerprint Registered!');
   };
 
   return (
@@ -46,7 +68,55 @@ const Header = () => {
               
 
             <span className="cursor-pointer hover:text-gray-300">
-            <button className="btn btn-active btn-ghost">SignUp</button>
+            
+            <Dialog>
+      <DialogTrigger asChild>
+      <button className="btn btn-active btn-ghost">SignUp</button>
+      </DialogTrigger>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Register Your Finger Print</DialogTitle>
+         
+        </DialogHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4 justify-center">
+            <img src="fingerprint.gif" className="col-span-4" alt="" />
+          
+          </div>
+        
+        </div>
+        <DialogDescription className={isSignedUp ? 'text-green-500' : 'text-red-500'}>
+          
+        {isSignedUp ? 'Fingerprint Registered' : 'Awaiting Your Finger Print......'}
+      </DialogDescription>
+      <DialogFooter>
+        {isSignedUp ? (
+          <Link href="/dashboard"> {/* Link to the login page */}
+            <a className="btn btn-active btn-ghost">Log In</a>
+          </Link>
+        ) : (
+          <button
+            onClick={handleClick}
+            className="btn btn-active btn-ghost"
+          >
+            Sign Up
+          </button>
+        )}
+      </DialogFooter>
+
+      {/* Conditionally render "Already have an account?" text */}
+      {!isSignedUp && (
+        <div className="text-blue-500">
+          <Link href="/dashboard" className="hover:no-underline">
+             <button>Already have an account? Login!</button> 
+          </Link>
+        </div>
+      )}
+
+      <ToastContainer />
+      </DialogContent>
+    </Dialog>
+            
             </span>
 
             
@@ -75,8 +145,50 @@ const Header = () => {
             Newsroom
               </Link>
             </span>
-            <span className="py-2 cursor-pointer hover:text-gray-300">
-            <button className="btn btn-active btn-ghost">SignUp</button>
+            <span className="cursor-pointer hover:text-gray-300">
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="btn btn-active btn-ghost">SignUp</button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[425px]">
+                <DialogHeader>
+                  <DialogTitle>Register Your Finger Print</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4 justify-center">
+                    <img src="fingerprint.gif" className="col-span-4" alt="" />
+                  </div>
+                </div>
+                <DialogDescription className={isSignedUp ? 'text-green-500' : 'text-red-500'}>
+                  {isSignedUp ? 'Fingerprint Registered' : 'Awaiting Your Finger Print......'}
+                </DialogDescription>
+                <DialogFooter>
+                  {isSignedUp ? (
+                    <Link href="/dashboard"> {/* Link to the login page */}
+                      <a className="btn btn-active btn-ghost">Log In</a>
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={handleClick}
+                      className="btn btn-active btn-ghost"
+                    >
+                      Sign Up
+                    </button>
+                  )}
+                </DialogFooter>
+
+                {/* Conditionally render "Already have an account?" text */}
+                {!isSignedUp && (
+                  <div className="text-blue-500">
+                    <Link href="/dashboard" className="hover:no-underline">
+                       <button>Already have an account? Login!</button> 
+                    </Link>
+                  </div>
+                )}
+
+                <ToastContainer />
+              </DialogContent>
+            </Dialog>
             </span>
           </div>
         )}
